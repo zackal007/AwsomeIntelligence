@@ -1,0 +1,278 @@
+/* ========== 苹果风格响应式设计 ==========
+   针对不同设备尺寸的优化
+   ====================================== */
+
+/* 平板端响应式设计 (768px及以下) */
+@media (max-width: 768px) {
+    :root {
+        --space-md: 12px;
+        --space-lg: 20px;
+        --space-xl: 28px;
+        --space-2xl: 40px;
+        --space-3xl: 56px;
+        --space-4xl: 80px;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        gap: var(--space-md);
+        padding: var(--space-sm) 0;
+    }
+    
+    .nav-links {
+        gap: var(--space-lg);
+        margin-top: var(--space-sm);
+    }
+    
+    .hero {
+        padding: var(--space-3xl) 0 var(--space-2xl);
+    }
+    
+    .hero h1 {
+        font-size: 36px;
+        line-height: 1.2;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .section-title p {
+        font-size: 16px;
+    }
+    
+    .service-card {
+        padding: var(--space-lg);
+    }
+    
+    .service-card h3 {
+        font-size: 20px;
+    }
+    
+    .service-card p {
+        font-size: 15px;
+    }
+    
+    .testimonial-card {
+        padding: var(--space-lg);
+    }
+    
+    .testimonial-text {
+        font-size: 15px;
+    }
+    
+    .author-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .author-info h4 {
+        font-size: 15px;
+    }
+    
+    .author-info p {
+        font-size: 13px;
+    }
+    
+    .cta {
+        padding: var(--space-2xl) 0;
+    }
+    
+    .cta h2 {
+        font-size: 28px;
+    }
+    
+    .cta p {
+        font-size: 16px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        min-height: 40px;
+        min-width: 100px;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+    }
+    
+    footer {
+        padding: var(--space-lg) 0;
+    }
+}
+
+/* 手机端响应式设计 (480px及以下) */
+@media (max-width: 480px) {
+    :root {
+        --space-md: 10px;
+        --space-lg: 16px;
+        --space-xl: 24px;
+        --space-2xl: 32px;
+        --space-3xl: 48px;
+        --space-4xl: 64px;
+    }
+    
+    .container {
+        padding: 0 var(--space-sm);
+    }
+    
+    .hero h1 {
+        font-size: 28px;
+        letter-spacing: -0.02em;
+    }
+    
+    .hero p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .section-title h2 {
+        font-size: 24px;
+    }
+    
+    .section-title p {
+        font-size: 15px;
+    }
+    
+    .services-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .service-card {
+        padding: var(--space-lg);
+    }
+    
+    .service-card h3 {
+        font-size: 18px;
+    }
+    
+    .testimonial-card {
+        padding: var(--space-lg);
+    }
+    
+    .testimonial-text {
+        font-size: 15px;
+    }
+    
+    .author-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+    
+    .author-info h4 {
+        font-size: 14px;
+    }
+    
+    .author-info p {
+        font-size: 12px;
+    }
+    
+    .cta h2 {
+        font-size: 24px;
+    }
+    
+    .cta p {
+        font-size: 15px;
+    }
+    
+    .btn {
+        padding: 12px 16px;
+        font-size: 16px;
+        min-height: 44px;
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    footer {
+        padding: var(--space-md) 0;
+    }
+    
+    /* 移动端导航菜单 - 苹果风格 */
+    .mobile-menu-button {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--text-primary);
+        cursor: pointer;
+        padding: var(--space-xs);
+        border-radius: var(--radius-sm);
+        transition: all 0.2s ease;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-menu-button:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
+    
+    .mobile-menu-button:focus {
+        outline: 2px solid var(--apple-blue);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm);
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: var(--space-lg);
+        margin-top: var(--space-md);
+        padding: var(--space-md) 0;
+        border-top: 1px solid var(--border-color);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+    
+    .nav-links a {
+        font-size: 17px;
+        padding: var(--space-sm) 0;
+        text-align: center;
+    }
+    
+    .nav-links a::after {
+        display: none;
+    }
+}
+
+/* 超小屏幕优化 (320px及以下) */
+@media (max-width: 320px) {
+    :root {
+        --space-4xl: 56px;
+        --space-3xl: 40px;
+        --space-2xl: 28px;
+    }
+    
+    .hero h1 {
+        font-size: 24px;
+    }
+    
+    .hero p {
+        font-size: 14px;
+    }
+    
+    .section-title h2 {
+        font-size: 20px;
+    }
+    
+    .btn {
+        min-height: 40px;
+        font-size: 15px;
+    }
+}
