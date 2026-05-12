@@ -270,9 +270,32 @@
     .section-title h2 {
         font-size: 20px;
     }
-    
+
     .btn {
         min-height: 40px;
         font-size: 15px;
+    }
+}
+
+/* 二维码响应式样式 */
+@media (max-width: 768px) {
+    .qr-item img {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .qr-grid {
+        gap: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .qr-item img {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .media-qr-section h3 {
+        font-size: 20px;
     }
 }

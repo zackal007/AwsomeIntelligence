@@ -357,6 +357,53 @@ header {
     font-size: 14px;
 }
 
+/* 二维码入口样式 */
+.media-qr-section {
+    margin-top: var(--space-3xl);
+    text-align: center;
+}
+
+.media-qr-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xl);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.qr-grid {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-xl);
+    flex-wrap: wrap;
+}
+
+.qr-item {
+    text-align: center;
+}
+
+.qr-item img {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.qr-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.qr-item p {
+    margin-top: var(--space-sm);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
 /* 行动号召 - 苹果风格 */
 .cta {
     text-align: center;
