@@ -200,7 +200,16 @@ header {
 
 /* 主要内容区域 */
 .main-content {
+    padding: var(--space-2xl) 0;
+}
+
+/* 模块区域 */
+.module-section {
     padding: var(--space-3xl) 0;
+}
+
+.module-section:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
 }
 
 .section-title {
