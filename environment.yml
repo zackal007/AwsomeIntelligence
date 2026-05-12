@@ -1,0 +1,10 @@
+name: awesome-intelligence
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - requests
+    - beautifulsoup4
+    - scrapling
