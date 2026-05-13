@@ -277,6 +277,25 @@
     }
 }
 
+/* 社交媒体链接响应式样式 */
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-md);
+    }
+    
+    .social-link {
+        width: 200px;
+        justify-content: center;
+    }
+    
+    .media-more-btn {
+        padding: var(--space-sm) var(--space-xl);
+        font-size: 18px;
+    }
+}
+
 /* 二维码响应式样式 */
 @media (max-width: 768px) {
     .qr-item img {
