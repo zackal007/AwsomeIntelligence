@@ -19,12 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 添加简单的表单验证（如果需要）
 
-    // 社交媒体"更多"按钮功能（预留扩展）
+    // 社交媒体"更多"按钮功能 - Apple风格横向展开
     const mediaMoreBtn = document.getElementById('media-more-btn');
-    if (mediaMoreBtn) {
+    const mediaMoreContent = document.getElementById('media-more-content');
+    
+    if (mediaMoreBtn && mediaMoreContent) {
         mediaMoreBtn.addEventListener('click', function() {
-            // 这里可以添加未来扩展功能
-            console.log('更多按钮被点击');
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            
+            // 使用 CSS transition 实现平滑展开
+            if (isExpanded) {
+                mediaMoreContent.setAttribute('hidden', '');
+            } else {
+                mediaMoreContent.removeAttribute('hidden');
+            }
         });
     }
     // 可以在这里添加更多交互功能

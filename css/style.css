@@ -273,6 +273,116 @@ header {
     font-size: 16px;
 }
 
+/* App 展示卡片 - Apple风格 */
+.apps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--space-xl);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.app-card {
+    display: flex;
+    gap: var(--space-lg);
+    background: var(--background-primary);
+    border-radius: var(--radius-xl);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.app-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.app-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, var(--apple-blue) 0%, #005bbf 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+}
+
+.app-icon-emoji {
+    font-size: 40px;
+    line-height: 1;
+}
+
+.app-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-info h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.app-tagline {
+    font-size: 14px;
+    color: var(--apple-blue);
+    font-weight: 500;
+    margin-bottom: var(--space-sm);
+}
+
+.app-description {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+    flex: 1;
+}
+
+.app-meta {
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-md);
+}
+
+.app-platform,
+.app-size {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    background: var(--background-secondary);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.app-store-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--text-primary);
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+}
+
+.app-store-btn:hover {
+    background: var(--text-secondary);
+    transform: scale(1.02);
+}
+
+.app-store-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
 /* 客户评价 - 苹果风格 */
 .testimonials {
     background: var(--background-secondary);
@@ -357,143 +467,146 @@ header {
     font-size: 14px;
 }
 
-/* 二维码入口样式 */
+/* 关注我们 - Apple风格 */
 .media-qr-section {
-    margin-top: var(--space-3xl);
-    text-align: center;
-}
-
-.media-qr-section h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: var(--space-xl);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--apple-light-gray);
 }
 
 .media-layout {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: var(--space-2xl);
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
 }
 
-.qr-grid {
+/* 二维码行 */
+.qr-row {
     display: flex;
     justify-content: center;
     gap: var(--space-xl);
-    flex-wrap: wrap;
 }
 
 .qr-item {
     text-align: center;
+    flex-shrink: 0;
 }
 
-.qr-item img {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
+.qr-item img,
+.qr-placeholder {
+    width: 100px;
+    height: 100px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.qr-item img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+.qr-item img:hover,
+.qr-placeholder:hover {
+    transform: scale(1.02);
+}
+
+.qr-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ff2442 0%, #ff6b7a 100%);
+}
+
+.qr-icon {
+    font-size: 40px;
 }
 
 .qr-item p {
     margin-top: var(--space-sm);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    color: var(--text-primary);
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--text-secondary);
 }
 
-/* 社交媒体部分 */
-.social-media-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--space-md);
-    min-width: 200px;
-}
-
-/* 更多社交媒体按钮 */
-.media-more-btn {
-    background: var(--apple-blue);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: var(--space-sm) var(--space-lg);
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    align-self: center;
-}
-
-.media-more-btn {
-    background: var(--apple-blue);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: var(--space-sm) var(--space-lg);
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.media-more-btn:hover {
-    background: #005bbf;
-    transform: scale(1.02);
-}
-
-.media-more-btn:active {
-    transform: scale(0.98);
-}
-
-.media-more-content {
-    margin-top: var(--space-lg);
-}
-
-.social-links {
+/* 平台链接行 - Apple风格 */
+.platform-links-row {
     display: flex;
     justify-content: center;
-    gap: var(--space-lg);
-    flex-wrap: wrap;
 }
 
-.social-link {
+.platform-links-container {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-sm) var(--space-md);
-    background: var(--background-secondary);
-    border-radius: 8px;
+    gap: var(--space-xs);
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 24px;
+    padding: 6px;
+}
+
+.platform-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: transparent;
+    border-radius: 18px;
     text-decoration: none;
     color: var(--text-primary);
-    transition: background-color 0.2s ease, transform 0.1s ease;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-.social-link:hover {
-    background: var(--apple-light-gray);
-    transform: translateY(-2px);
-}
-
-.social-icon {
-    font-size: 20px;
-}
-
-.social-text {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.platform-link:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.platform-icon {
+    font-size: 16px;
+    line-height: 1;
+}
+
+/* 更多按钮 */
+.media-more-trigger {
+    background: var(--apple-blue);
+    color: white;
+}
+
+.media-more-trigger:hover {
+    background: #005bbf;
+}
+
+.media-more-trigger[aria-expanded="true"] {
+    background: var(--text-secondary);
+}
+
+.more-icon {
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.media-more-trigger[aria-expanded="true"] .more-icon {
+    transform: rotate(45deg);
+}
+
+/* 额外平台链接 - 横向展开动画 */
+.platform-links-extra {
+    display: flex;
+    gap: var(--space-xs);
+    overflow: hidden;
+    max-width: 0;
+    opacity: 0;
+    transition: max-width 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.3s ease;
+}
+
+.platform-links-extra:not([hidden]) {
+    max-width: 300px;
+    opacity: 1;
+}
+
+.platform-links-extra[hidden] {
+    display: flex;
 }
 
 /* 行动号召 - 苹果风格 */

@@ -277,50 +277,97 @@
     }
 }
 
-/* 社交媒体链接响应式样式 */
+/* 关注我们响应式样式 */
 @media (max-width: 768px) {
     .media-layout {
-        flex-direction: column;
-        gap: var(--space-xl);
-        align-items: center;
-    }
-    
-    .social-links {
-        flex-direction: row;
         gap: var(--space-lg);
     }
     
-    .social-link {
-        width: auto;
-        padding: var(--space-sm) var(--space-md);
-    }
-    
-    .media-more-btn {
-        padding: var(--space-sm) var(--space-xl);
-        font-size: 18px;
-        align-self: center;
-    }
-}
-
-/* 二维码响应式样式 */
-@media (max-width: 768px) {
-    .qr-item img {
-        width: 140px;
-        height: 140px;
-    }
-    
-    .qr-grid {
+    .qr-row {
         gap: var(--space-lg);
+    }
+    
+    .qr-item img,
+    .qr-placeholder {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .qr-icon {
+        font-size: 36px;
     }
 }
 
 @media (max-width: 480px) {
-    .qr-item img {
-        width: 120px;
-        height: 120px;
+    .qr-row {
+        gap: var(--space-md);
     }
     
-    .media-qr-section h3 {
+    .qr-item img,
+    .qr-placeholder {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .qr-icon {
+        font-size: 32px;
+    }
+    
+    .qr-item p {
+        font-size: 13px;
+    }
+    
+    .platform-link {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    
+    .platform-icon {
+        font-size: 14px;
+    }
+}
+
+/* App卡片响应式 */
+@media (max-width: 768px) {
+    .apps-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .app-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .app-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .app-icon-emoji {
+        font-size: 36px;
+    }
+    
+    .app-meta {
+        justify-content: center;
+    }
+    
+    .app-store-btn {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-card {
+        padding: var(--space-lg);
+    }
+    
+    .app-info h3 {
         font-size: 20px;
+    }
+    
+    .app-description {
+        font-size: 14px;
     }
 }
