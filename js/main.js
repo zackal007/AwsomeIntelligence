@@ -19,22 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 添加简单的表单验证（如果需要）
 
-    // "更多"按钮功能
+    // 社交媒体"更多"按钮功能（预留扩展）
     const mediaMoreBtn = document.getElementById('media-more-btn');
-    const mediaMoreContent = document.getElementById('media-more-content');
-    
-    if (mediaMoreBtn && mediaMoreContent) {
+    if (mediaMoreBtn) {
         mediaMoreBtn.addEventListener('click', function() {
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            this.setAttribute('aria-expanded', !isExpanded);
-            mediaMoreContent.hidden = isExpanded;
-            
-            // 更新按钮文本
-            if (isExpanded) {
-                this.textContent = '更多';
-            } else {
-                this.textContent = '收起';
-            }
+            // 这里可以添加未来扩展功能
+            console.log('更多按钮被点击');
         });
     }
     // 可以在这里添加更多交互功能

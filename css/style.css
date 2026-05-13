@@ -371,6 +371,14 @@ header {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.media-layout {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
 .qr-grid {
     display: flex;
     justify-content: center;
@@ -404,10 +412,28 @@ header {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+/* 社交媒体部分 */
+.social-media-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-md);
+    min-width: 200px;
+}
+
 /* 更多社交媒体按钮 */
-.media-more-section {
-    margin-top: var(--space-xl);
-    text-align: center;
+.media-more-btn {
+    background: var(--apple-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    align-self: center;
 }
 
 .media-more-btn {
