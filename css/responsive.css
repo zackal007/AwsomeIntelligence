@@ -327,47 +327,35 @@
     }
 }
 
-/* App卡片响应式 */
+/* App展示响应式 */
 @media (max-width: 768px) {
-    .apps-grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
+    .apps-showcase {
+        gap: var(--space-xl);
     }
     
-    .app-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .app-icon-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 24px;
     }
     
-    .app-icon {
-        width: 70px;
-        height: 70px;
+    .app-content h3 {
+        font-size: 19px;
     }
     
-    .app-icon-emoji {
-        font-size: 36px;
-    }
-    
-    .app-meta {
-        justify-content: center;
-    }
-    
-    .app-store-btn {
-        align-self: center;
+    .app-subtitle {
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
-    .app-card {
+    .app-showcase-card {
         padding: var(--space-lg);
     }
     
-    .app-info h3 {
-        font-size: 20px;
-    }
-    
-    .app-description {
-        font-size: 14px;
+    .app-icon-img {
+        width: 90px;
+        height: 90px;
+        border-radius: 22px;
     }
 }

@@ -27,10 +27,10 @@
     top: 6px;
 }
 
-/* 苹果风格变量 */
+/* 苹果风格变量 - 黑白主题 */
 :root {
-    /* 苹果官方色彩 */
-    --apple-blue: #0071e3;
+    /* 苹果官方色彩 - 黑白 */
+    --apple-blue: #000000;
     --apple-gray: #86868b;
     --apple-light-gray: #f5f5f7;
     --apple-dark-gray: #1d1d1f;
@@ -136,7 +136,7 @@ header {
 }
 
 .logo:hover {
-    color: var(--apple-blue);
+    color: var(--text-secondary);
 }
 
 .nav-links {
@@ -273,114 +273,84 @@ header {
     font-size: 16px;
 }
 
-/* App 展示卡片 - Apple风格 */
-.apps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--space-xl);
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.app-card {
+/* App 展示 - 极简Apple风格 */
+.apps-showcase {
     display: flex;
-    gap: var(--space-lg);
-    background: var(--background-primary);
-    border-radius: var(--radius-xl);
-    padding: var(--space-xl);
-    box-shadow: var(--shadow-sm);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.app-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-}
-
-.app-icon {
-    flex-shrink: 0;
-    width: 80px;
-    height: 80px;
-    border-radius: 18px;
-    background: linear-gradient(135deg, var(--apple-blue) 0%, #005bbf 100%);
-    display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3);
+    gap: var(--space-2xl);
+    flex-wrap: wrap;
 }
 
-.app-icon-emoji {
-    font-size: 40px;
-    line-height: 1;
-}
-
-.app-info {
-    flex: 1;
+.app-showcase-card {
     display: flex;
     flex-direction: column;
-}
-
-.app-info h3 {
-    font-size: 22px;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 4px;
-}
-
-.app-tagline {
-    font-size: 14px;
-    color: var(--apple-blue);
-    font-weight: 500;
-    margin-bottom: var(--space-sm);
-}
-
-.app-description {
-    font-size: 15px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-bottom: var(--space-md);
-    flex: 1;
-}
-
-.app-meta {
-    display: flex;
-    gap: var(--space-md);
-    margin-bottom: var(--space-md);
-}
-
-.app-platform,
-.app-size {
-    font-size: 13px;
-    color: var(--text-tertiary);
-    background: var(--background-secondary);
-    padding: 4px 10px;
-    border-radius: 12px;
-}
-
-.app-store-btn {
-    display: inline-flex;
     align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    background: var(--text-primary);
-    color: white;
-    border-radius: 20px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.2s ease;
-    align-self: flex-start;
+    text-align: center;
+    padding: var(--space-xl);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.app-store-btn:hover {
-    background: var(--text-secondary);
+.app-showcase-card:hover {
     transform: scale(1.02);
 }
 
-.app-store-btn svg {
-    width: 18px;
-    height: 18px;
+.app-visual {
+    margin-bottom: var(--space-lg);
+}
+
+.app-icon-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    box-shadow: 
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        0 8px 24px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.app-showcase-card:hover .app-icon-img {
+    box-shadow: 
+        0 4px 16px rgba(0, 0, 0, 0.08),
+        0 16px 40px rgba(0, 0, 0, 0.12);
+    transform: scale(1.02);
+}
+
+.app-content h3 {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.app-subtitle {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    font-weight: 400;
+}
+
+.app-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--apple-black);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.app-link:hover {
+    color: var(--text-secondary);
+}
+
+.app-link-arrow {
+    transition: transform 0.2s ease;
+}
+
+.app-link:hover .app-link-arrow {
+    transform: translateX(3px);
 }
 
 /* 客户评价 - 苹果风格 */
@@ -419,8 +389,8 @@ header {
 .testimonial-text::after {
     content: '"';
     font-size: 48px;
-    color: var(--apple-blue);
-    opacity: 0.2;
+    color: var(--apple-black);
+    opacity: 0.15;
     line-height: 1;
     position: absolute;
 }
@@ -445,7 +415,7 @@ header {
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    background: var(--apple-blue);
+    background: var(--apple-black);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -568,12 +538,12 @@ header {
 
 /* 更多按钮 */
 .media-more-trigger {
-    background: var(--apple-blue);
+    background: var(--apple-black);
     color: white;
 }
 
 .media-more-trigger:hover {
-    background: #005bbf;
+    background: #333;
 }
 
 .media-more-trigger[aria-expanded="true"] {
@@ -662,25 +632,25 @@ header {
 }
 
 .btn-primary {
-    background: var(--apple-blue);
+    background: var(--apple-black);
     color: white;
-    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary:hover {
-    background: #0077ed;
+    background: #333;
     transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 113, 227, 0.4);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--apple-blue);
-    border: 2px solid var(--apple-blue);
+    color: var(--apple-black);
+    border: 2px solid var(--apple-black);
 }
 
 .btn-secondary:hover {
-    background: rgba(0, 113, 227, 0.1);
+    background: rgba(0, 0, 0, 0.05);
     transform: translateY(-2px);
 }
 
@@ -725,7 +695,7 @@ img {
 
 /* 焦点样式 - 苹果风格 */
 a:focus, button:focus {
-    outline: 2px solid var(--apple-blue);
+    outline: 2px solid var(--apple-black);
     outline-offset: 2px;
     border-radius: var(--radius-md);
 }
