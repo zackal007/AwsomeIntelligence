@@ -1,4 +1,4 @@
-name: Deploy to CloudBase Static Hosting
+name: Deploy to GitHub Pages and CloudBase
 
 on:
   push:
@@ -8,8 +8,40 @@ on:
     branches:
       - main
 
+# 设置 GITHUB_TOKEN 权限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 并发控制
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  # 构建并部署到 GitHub Pages
+  deploy-github-pages:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # 部署到 CloudBase（可选，如果你仍需要）
+  deploy-cloudbase:
     runs-on: ubuntu-latest
     
     steps:
